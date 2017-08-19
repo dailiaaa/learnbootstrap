@@ -69,6 +69,96 @@
         </div>
         </div>
     </div>
+    <!-- reserve modal -->
+    <div class="modal fade " id="reserveModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Reserve Table</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                    <form>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-2 form-check-label">Number of Guests</label>
+                            <div class="col-12 col-sm">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" name="numofguests" class="form-check-input"> 1
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" name="numofguests" class="form-check-input"> 2
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" name="numofguests" class="form-check-input"> 3
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" name="numofguests" class="form-check-input"> 4
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" name="numofguests" class="form-check-input"> 5
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" name="numofguests" class="form-check-input"> 6
+                                </label>
+                            </div> 
+                            </div>  
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-2">Section</label>
+                            <div class="col-10">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                <input type="radio" name="section" class="btn btn-success">No-Smoking</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                <input type="radio" name="section" class="btn btn-danger">Smoking</label>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-2 col-form-label">Date and Time</label>
+                            <div class="col-6 col-sm-3">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <input type="num" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-clock-o"></i></div>
+                                    <input type="num" class="form-control">
+                                </div>
+                            </div>                         
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-1 offset-2">
+                                <button class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                            </div>
+                            <div class="col-1">
+                                <button class="btn btn-primary btn-sm">Reserve</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header align-items-center">
@@ -80,10 +170,8 @@
                     <img src="img/logo.png" class="img-fluid align-self-center">
                 </div>
                 <div class="col col-sm">
-                    <a href="#reserve" class="btn btn-block btn-warning"
-                        data-toggle="tooltip" data-html="true"
-                        title="or call us at<br><strong>+123456789</strong>"
-                        data-placement="bottom">Reserve Table</a>
+                    <a href="#reserveModal" class="btn btn-block btn-warning"
+                        data-toggle="modal">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -127,6 +215,14 @@
                         <a href="#mycarousel" class="carousel-control-next" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>
+                        <div class="button-group" id="carouselButtons">
+                            <button class="btn btn-danger btn-sm" id="carousel-pause"> 
+                                <span class="fa fa-pause"></span>
+                            </button>
+                            <button class="btn btn-danger btn-sm" id="carousel-play">
+                                <span class="fa fa-play"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -295,7 +391,13 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
+            $('#mycarousel').carousel({interval: 2000});
+            $('#carousel-pause').click(function() {
+                $('#mycarousel').carousel('pause');
+            });
+            $('#carousel-play').click(function() {
+                $('#mycarousel').carousel('cycle');
+            });
         });
     </script>
 </body>
