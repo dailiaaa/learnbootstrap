@@ -9,10 +9,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-social.css">
+    <!-- endbuild -->
 </head>
 
 <body>
@@ -380,27 +382,13 @@
         </div>
     </footer>
      <!-- jQuery first, then Tether, then Bootstrap JS. -->
+     <!-- build:js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#mycarousel').carousel({interval: 2000});
-            var carouselSpan = $('#carouselButton').children('span');
-            $('#carouselButton').click(function() {
-                if (carouselSpan.hasClass('fa-pause')) {
-                    carouselSpan.removeClass('fa-pause');
-                    carouselSpan.addClass('fa-play');
-                    $('#mycarousel').carousel('pause');
-                } else {
-                    carouselSpan.removeClass('fa-play');
-                    carouselSpan.addClass('fa-pause');
-                    $('#mycarousel').carousel('cycle');
-                }
-            });
-        });
-    </script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
